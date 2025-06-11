@@ -8,9 +8,9 @@ export const SITE_METADATA = {
   theme: "system", // system, dark or light
   siteUrl: "https://ivan-ict.github.io/",
   siteRepo: "https://github.com/ivan-ict/ivan-ict.github.io",
-  siteLogo: `${process.env.BASE_PATH || ""}/static/images/logo.jpg`,
+  siteLogo: `${import.meta.env.VITE_BASE_PATH || ""}/static/images/logo.jpg`,
   socialBanner: `${
-    process.env.BASE_PATH || ""
+    import.meta.env.BASE_PATH || ""
   }/static/images/twitter-card.jpeg`,
   email: "ivantrinh.it@gmail.com",
   github: "https://github.com/ivan-ict",
@@ -27,7 +27,7 @@ export const SITE_METADATA = {
   imdbRatingsList: "",
   analytics: {
     umamiAnalytics: {
-      websiteId: process.env.NEXT_UMAMI_ID,
+      websiteId: import.meta.env.VITE_UMAMI_ID,
       shareUrl:
         "https://cloud.umami.is/share/7rqLvTMaEeAR81d3/ivan-ict.github.io",
     },
@@ -39,10 +39,10 @@ export const SITE_METADATA = {
   },
   comments: {
     giscusConfigs: {
-      repo: process.env.NEXT_PUBLIC_GISCUS_REPO || "",
-      repositoryId: process.env.NEXT_PUBLIC_GISCUS_REPOSITORY_ID || "",
-      category: process.env.NEXT_PUBLIC_GISCUS_CATEGORY || "",
-      categoryId: process.env.NEXT_PUBLIC_GISCUS_CATEGORY_ID || "",
+      repo: import.meta.env.VITE_PUBLIC_GISCUS_REPO || "",
+      repositoryId: import.meta.env.VITE_PUBLIC_GISCUS_REPOSITORY_ID || "",
+      category: import.meta.env.VITE_PUBLIC_GISCUS_CATEGORY || "",
+      categoryId: import.meta.env.VITE_PUBLIC_GISCUS_CATEGORY_ID || "",
       mapping: "title", // supported options: pathname, url, title
       reactions: "1", // Emoji reactions: 1 = enable / 0 = disable
       metadata: "0",
@@ -55,7 +55,7 @@ export const SITE_METADATA = {
   search: {
     kbarConfigs: {
       // path to load documents to search
-      searchDocumentsPath: `${process.env.BASE_PATH || ""}/search.json`,
+      searchDocumentsPath: `${import.meta.env.BASE_PATH || ""}/search.json`,
     },
   },
   support: {
