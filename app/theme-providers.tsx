@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 
 import { ThemeProvider } from "next-themes";
 import { SITE_METADATA } from "~/data/site-metadata";
