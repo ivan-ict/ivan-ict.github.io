@@ -37,7 +37,7 @@ export function ThemeSwitcher() {
 
   // When mounted on client, now we can show the UI
   useEffect(() => setMounted(true), []);
-  console.log(theme, setTheme, resolvedTheme);
+
   return (
     <div className="flex items-center">
       <Menu as="div" className="relative inline-block text-left">

@@ -1,5 +1,6 @@
 import { clsx } from "clsx";
-import TiltedGrid from "~/icons/tilted-grid";
+// import TiltedGrid from "~/icons/tilted-grid";
+import TiltedGrid from "~/icons/tilted-grid.svg?react";
 
 export function TiltedGridBackground({ className }: { className?: string }) {
   return (

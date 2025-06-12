@@ -10,7 +10,7 @@ export const SITE_METADATA = {
   siteRepo: "https://github.com/ivan-ict/ivan-ict.github.io",
   siteLogo: `${import.meta.env.VITE_BASE_PATH || ""}/static/images/logo.jpg`,
   socialBanner: `${
-    import.meta.env.BASE_PATH || ""
+    import.meta.env.VITE_BASE_PATH || ""
   }/static/images/twitter-card.jpeg`,
   email: "ivantrinh.it@gmail.com",
   github: "https://github.com/ivan-ict",
@@ -55,7 +55,9 @@ export const SITE_METADATA = {
   search: {
     kbarConfigs: {
       // path to load documents to search
-      searchDocumentsPath: `${import.meta.env.BASE_PATH || ""}/search.json`,
+      searchDocumentsPath: `${
+        import.meta.env.VITE_BASE_PATH || ""
+      }/search.json`,
     },
   },
   support: {
