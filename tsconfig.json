@@ -8,7 +8,9 @@
     "**/*.mjs",
     "**/*.ts",
     "**/*.tsx",
-    "**/*.json"
+    "**/*.json",
+    "app",
+    "app/types/svg.d.ts"
   ],
   "exclude": ["node_modules"],
   "compilerOptions": {

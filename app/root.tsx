@@ -21,6 +21,7 @@ import "react-medium-image-zoom/dist/styles.css";
 import "remark-github-blockquote-alert/alert.css";
 import { KBarSearchProvider } from "./search/kbar-provider";
 import { UmamiAnalytics } from "./components/analytics/umami";
+import { Footer } from "./components/footer";
 
 export const links: Route.LinksFunction = () => {
   const basePath = import.meta.env.VITE_BASE_PATH || "";
@@ -153,7 +154,7 @@ export function Layout() {
               <Outlet />
             </main>
           </KBarSearchProvider>
-          {/* <Footer /> */}
+          <Footer />
         </ThemeProviders>
         <ScrollRestoration />
         <Scripts />
