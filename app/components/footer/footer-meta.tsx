@@ -67,7 +67,10 @@ export function FooterMeta() {
       </div>
       <div className="flex items-center gap-2">
         <Map className="h-5 w-5" />
-        <span className="font-medium">[::1]:443 - Melbourne, 🇦🇺</span>
+        <span className="font-medium">
+          [::1]:443 - Melbourne,{" "}
+          <Twemoji emoji="flag-australia" className="!h-4.5" />
+        </span>
       </div>
       <div className="flex items-center gap-2">
         <Clock className="h-5 w-5" />

@@ -3,7 +3,7 @@ import { clsx } from "clsx";
 import { Link } from "~/components/ui/link";
 import { SpotifyNowPlaying } from "~/components/ui/now-playing";
 import { SITE_METADATA } from "~/data/site-metadata";
-import MadeInVietNam from "~/icons/miv.svg?react";
+import MadeInAustralia from "~/icons/mia.svg?react";
 
 export function FooterBottom() {
   return (
@@ -21,8 +21,9 @@ export function FooterBottom() {
       />
       <div className="flex items-center">
         <Link href={SITE_METADATA.siteRepo}>
+          {/* https://github.com/badges/shields/blob/master/badge-maker/README.md */}
           <span data-umami-event="made-in-australia">
-            <MadeInVietNam />
+            <MadeInAustralia />
           </span>
         </Link>
         {/* <span className="mx-2.5 text-gray-400">|</span>
