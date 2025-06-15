@@ -13,15 +13,15 @@ import { TiltedGridBackground } from "~/components/ui/tilted-grid-background";
 import { ThemeProviders } from "./theme-providers";
 import { SITE_METADATA } from "~/data/site-metadata";
 import { Header } from "./components/header";
+import { KBarSearchProvider } from "./search/kbar-provider";
+import { UmamiAnalytics } from "./components/analytics/umami";
+import { Footer } from "./components/footer";
 
 // CSS imports
 import "~/css/tailwind.css";
 import "~/css/twemoji.css";
 import "react-medium-image-zoom/dist/styles.css";
 import "remark-github-blockquote-alert/alert.css";
-import { KBarSearchProvider } from "./search/kbar-provider";
-import { UmamiAnalytics } from "./components/analytics/umami";
-import { Footer } from "./components/footer";
 
 export const links: Route.LinksFunction = () => {
   const basePath = import.meta.env.VITE_BASE_PATH || "";
@@ -115,7 +115,7 @@ export const meta: Route.MetaFunction = () => {
   ];
 };
 
-export function Layout() {
+export default function App() {
   return (
     <html
       lang={SITE_METADATA.language}
@@ -132,39 +132,9 @@ export function Layout() {
         <Meta />
         <Links />
       </head>
-      <body
-        className={clsx([
-          "antialiased",
-          "relative min-h-screen pl-[calc(100vw-100%)]",
-          "flex flex-col",
-          "bg-white text-neutral-900",
-          "dark:bg-dark dark:text-gray-100",
-          // Apply font families
-          "font-[var(--font-nunito)]",
-        ])}
-      >
-        <TiltedGridBackground className="inset-x-0 top-0 z-[-1] h-[50vh]" />
-        <ThemeProviders>
-          <UmamiAnalytics
-            websiteId={SITE_METADATA.analytics.umamiAnalytics.websiteId}
-          />
-          <KBarSearchProvider configs={SITE_METADATA.search.kbarConfigs}>
-            <Header />
-            <main className="mb-auto grow">
-              <Outlet />
-            </main>
-          </KBarSearchProvider>
-          <Footer />
-        </ThemeProviders>
-        <ScrollRestoration />
-        <Scripts />
-      </body>
+      <Outlet />
     </html>
   );
-}
-
-export default function App() {
-  return <Outlet />;
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
@@ -188,7 +158,7 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
       <h1 className="text-4xl font-bold mb-4">{message}</h1>
       <p className="text-lg mb-4">{details}</p>
       {stack && (
-        <pre className="w-full p-4 overflow-x-auto bg-gray-100 dark:bg-gray-800 rounded">
+        <pre className="w-full p-4 overflow-x-auto bg-gray-100/90 dark:bg-gray-800/90 rounded-sm">
           <code>{stack}</code>
         </pre>
       )}

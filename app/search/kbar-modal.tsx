@@ -21,19 +21,19 @@ export function KBarModal({
 
   return (
     <KBarPortal>
-      <KBarPositioner className="z-50 bg-gray-300/50 p-4 backdrop-blur backdrop-filter dark:bg-black/50">
+      <KBarPositioner className="z-50 bg-gray-300/50 p-4 backdrop-blur-xl dark:bg-black/50">
         <KBarAnimator className="w-full max-w-xl">
           <div className="overflow-hidden rounded-2xl border border-gray-100 bg-gray-50 dark:border-gray-800 dark:bg-gray-900">
-            <div className="flex items-center space-x-4 p-4">
-              <span className="block w-5">
+            <div className="flex items-center gap-4 p-4">
+              <span className="block size-5">
                 <Search
                   strokeWidth={1.5}
                   size={20}
                   className="text-gray-400 dark:text-gray-300"
                 />
               </span>
-              <KBarSearch className="h-8 w-full bg-transparent text-gray-600 placeholder-gray-400 focus:outline-none dark:text-gray-200 dark:placeholder-gray-500" />
-              <kbd className="inline-block whitespace-nowrap rounded border border-gray-400 px-1.5 align-middle text-xs font-medium leading-4 tracking-wide text-gray-400">
+              <KBarSearch className="size-full bg-transparent text-gray-600 placeholder-gray-400 focus:outline-none dark:text-gray-200 dark:placeholder-gray-500" />
+              <kbd className="inline-flex size-6 items-center justify-center rounded border border-gray-400 text-xs font-medium leading-4 tracking-wide text-gray-400">
                 ESC
               </kbd>
             </div>
@@ -73,7 +73,7 @@ function RenderResults() {
                     : "bg-transparent text-gray-700 dark:text-gray-100"
                 }`}
               >
-                <div className="flex space-x-2">
+                <div className="flex gap-2">
                   {item.icon && <div className="self-center">{item.icon}</div>}
                   <div className="block">
                     {item.subtitle && (
@@ -91,12 +91,12 @@ function RenderResults() {
                 {item.shortcut?.length ? (
                   <div
                     aria-hidden
-                    className="flex flex-row items-center justify-center gap-x-2"
+                    className="flex flex-row items-center justify-center gap-2"
                   >
                     {item.shortcut.map((sc) => (
                       <kbd
                         key={sc}
-                        className={`flex h-7 w-6 items-center justify-center rounded border text-xs font-medium ${
+                        className={`flex size-7 items-center justify-center rounded border text-xs font-medium ${
                           active
                             ? "border-gray-200 text-gray-200"
                             : "border-gray-400 text-gray-400"

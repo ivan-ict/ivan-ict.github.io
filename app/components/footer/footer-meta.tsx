@@ -1,13 +1,13 @@
-// 'use client'
+// "use client";
 
 import { Clock, Github, Map, Star } from "lucide-react";
-import useSWR from "swr";
+// import useSWR from "swr";
 import { GrowingUnderline } from "~/components/ui/growing-underline";
 import { Link } from "~/components/ui/link";
-import { Twemoji } from "~/components/ui/twemoji";
+// import { Twemoji } from "~/components/ui/twemoji";
 import { SITE_METADATA } from "~/data/site-metadata";
-import type { GithubRepository } from "~/types/data";
-import { fetcher } from "~/utils/misc";
+// import type { GithubRepository } from "~/types/data";
+// import { fetcher } from "~/utils/misc";
 
 const TIME_IS = "https://time.is/Melbourne"; // Updated URL for Melbourne
 const MY_TIMEZONE = "Australia/Melbourne"; // Updated timezone
@@ -45,10 +45,11 @@ export function FooterMeta() {
   let { time, diff } = getTime();
   let siteRepo = SITE_METADATA.siteRepo.replace("https://github.com/", "");
   let repoName = siteRepo.split("/")[1];
-  let { data: repo } = useSWR<GithubRepository>(
-    `/api/github?repo=${siteRepo}`,
-    fetcher
-  );
+  let map = "https://maps.app.goo.gl/4m5dYqfFUv2GQoGn8";
+  // let { data: repo } = useSWR<GithubRepository>(
+  //   `/api/github?repo=${siteRepo}`,
+  //   fetcher
+  // );
 
   return (
     <div className="space-y-2 py-1.5 text-gray-800 dark:text-gray-200">
@@ -59,18 +60,23 @@ export function FooterMeta() {
             {repoName}
           </GrowingUnderline>
         </Link>
-        <span>-</span>
+        {/* <span>-</span>
         <span className="inline-flex items-center text-gray-500 dark:text-gray-400">
           <Star className="mr-1 h-4 w-4" />
           {repo ? <span>{repo.stargazerCount}</span> : "---"}
-        </span>
+        </span> */}
       </div>
       <div className="flex items-center gap-2">
         <Map className="h-5 w-5" />
-        <span className="font-medium">
-          [::1]:443 - Melbourne,{" "}
-          <Twemoji emoji="flag-australia" className="!h-4.5" />
-        </span>
+        <Link href={map}>
+          <GrowingUnderline data-umami-event="view-map">
+            <span className="font-medium">
+              {" "}
+              VIC 3124, Melbourne, Australia
+              {/* <Twemoji emoji="flag-australia" className="!h-4.5" /> */}
+            </span>
+          </GrowingUnderline>
+        </Link>
       </div>
       <div className="flex items-center gap-2">
         <Clock className="h-5 w-5" />

@@ -18,7 +18,7 @@ export function LogoAndRepo() {
 
   return (
     <div className="flex items-center">
-      <Logo className="mr-4" />
+      <Logo className="me-4" />
       <Link href={SITE_METADATA.siteRepo} rel="noreferrer">
         <GrowingUnderline
           data-umami-event="footer-view-source"
@@ -32,7 +32,7 @@ export function LogoAndRepo() {
           <span className="mx-2">-</span>
           <Link
             href={repo.lastCommit.url}
-            className="mr-2 text-indigo-700 dark:text-indigo-400"
+            className="me-2 text-indigo-700/100 dark:text-indigo-400/100"
             title={repo.lastCommit.message}
           >
             <GrowingUnderline
@@ -54,7 +54,7 @@ function CommitStatus({ status }: { status: CommitState }) {
     case "EXPECTED":
     case "SUCCESS":
       return (
-        <CheckCheck size={16} strokeWidth={2} className="text-green-700" />
+        <CheckCheck size={16} strokeWidth={2} className="text-green-700/100" />
       );
     case "PENDING":
       return (
@@ -67,7 +67,7 @@ function CommitStatus({ status }: { status: CommitState }) {
       );
     case "ERROR":
     case "FAILURE":
-      return <X size={16} strokeWidth={2} className="text-red-700" />;
+      return <X size={16} strokeWidth={2} className="text-red-700/100" />;
     default:
       return null;
   }

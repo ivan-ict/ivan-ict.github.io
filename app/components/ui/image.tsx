@@ -47,7 +47,7 @@ export function Image(props: ImageProps) {
         className={clsx(
           "transition-all duration-500 [transition-timing-function:cubic-bezier(.4,0,.2,1)]",
           "h-full max-h-full w-full object-center",
-          loaded ? "blur-0" : "blur-xl"
+          loaded ? "blur-none" : "blur-md"
         )}
         src={src}
         alt={alt}
@@ -71,7 +71,7 @@ export function Zoom(props: ZoomProps) {
     <ReactMediumImageZoom
       zoomMargin={20}
       classDialog={clsx([
-        "[&_[data-rmiz-modal-img]]:rounded-lg",
+        "[&_[data-rmiz-modal-img]]:rounded-sm",
         "[&_[data-rmiz-btn-unzoom]]:hidden",
         '[&_[data-rmiz-modal-overlay="visible"]]:bg-black/80',
         classDialog,

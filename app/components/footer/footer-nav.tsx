@@ -6,7 +6,7 @@ import { FOOTER_NAV_LINKS, FOOTER_PERSONAL_STUFF } from "~/data/navigation";
 
 export function FooterNav() {
   return (
-    <div className="flex flex-col gap-4 px-1 md:flex-row md:justify-end md:gap-24 md:px-0 md:text-right">
+    <div className="flex flex-col gap-4 px-1 md:flex-row md:justify-end md:gap-24 md:px-0 md:text-end">
       <div className="space-y-1 md:space-y-4">
         <div className="flex h-11 items-center font-semibold md:justify-end">
           <span>Sitemap</span>
@@ -18,7 +18,7 @@ export function FooterNav() {
                 <FooterLink link={link} />
               </li>
               {idx !== FOOTER_NAV_LINKS.length - 1 && (
-                <span className="text-gray-400 md:hidden">/</span>
+                <span className="text-gray-400/100 md:hidden">/</span>
               )}
             </Fragment>
           ))}
@@ -35,7 +35,7 @@ export function FooterNav() {
                 <FooterLink link={link} />
               </li>
               {idx !== FOOTER_NAV_LINKS.length - 1 && (
-                <span className="text-gray-400 md:hidden">/</span>
+                <span className="text-gray-400/100 md:hidden">/</span>
               )}
             </Fragment>
           ))}
@@ -56,7 +56,7 @@ function FooterLink({ link }: { link: (typeof FOOTER_NAV_LINKS)[0] }) {
       >
         {title}
         {isExternal && (
-          <ExternalLink className="-mt-1 ml-1.5" size={18} strokeWidth={1.5} />
+          <ExternalLink className="-mt-1 ms-1.5" size={18} strokeWidth={1.5} />
         )}
       </GrowingUnderline>
     </Link>

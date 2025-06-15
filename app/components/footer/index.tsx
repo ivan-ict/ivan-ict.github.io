@@ -13,12 +13,12 @@ export function Footer() {
       <div
         className={clsx([
           "grid grid-cols-1 gap-x-8 gap-y-8 py-8 md:grid-cols-2 xl:grid-cols-3",
-          "border-t border-gray-200 dark:border-gray-700",
+          "border-t border-gray-200/100 dark:border-gray-700/100",
         ])}
       >
         <div className="col-span-1 space-y-4 xl:col-span-2">
           <LogoAndRepo />
-          <div className="italic text-gray-500 dark:text-gray-400">
+          <div className="italic text-gray-500/100 dark:text-gray-400/100">
             {SITE_METADATA.description}
           </div>
           <div className="pt-4">

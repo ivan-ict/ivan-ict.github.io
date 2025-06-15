@@ -20,22 +20,22 @@ export function SpotifyNowPlaying({
   let { songUrl, title, artist, albumImageUrl } = useNowPlaying();
 
   return (
-    <div className={clsx(["flex items-center", className])}>
+    <div className={clsx("flex items-center", className)}>
       {showCover && albumImageUrl ? (
         <Image
           src={albumImageUrl}
           alt={title || "Now playing"}
           width={40}
           height={40}
-          className="h-5.5 w-5.5 shrink-0 animate-spin rounded-full border border-gray-300 [animation-duration:6s] dark:border-gray-700"
+          className="h-5.5 w-5.5 shrink-0 animate-spin rounded-full border border-gray-300/100 [animation-duration:6s] dark:border-gray-700/100"
         />
       ) : (
         <Brand as="icon" name="Spotify" className="h-5.5 w-5.5 shrink-0" />
       )}
-      <div className="ml-2 inline-flex truncate">
+      <div className="ms-2 inline-flex truncate">
         {songUrl ? (
           <>
-            <MusicWaves className="mr-2" />
+            <MusicWaves className="me-2" />
             <Link
               href={songUrl}
               className="font-medium text-[--song-color]"

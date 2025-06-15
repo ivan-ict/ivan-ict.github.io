@@ -2,15 +2,15 @@ import type { Config } from "tailwindcss";
 import defaultTheme from "tailwindcss/defaultTheme";
 import colors from "tailwindcss/colors";
 
+const { fontFamily } = defaultTheme;
+
 export default {
   content: [
-    "./index.html",
     "./app/**/*.{js,ts,jsx,tsx}",
-    "./app/components/**/*.{js,ts,jsx,tsx}",
-    "./app/layouts/**/*.{js,ts,jsx,tsx}",
-    "./app/pages/**/*.{js,ts,jsx,tsx}",
-    "./app/routes/**/*.{js,ts,jsx,tsx}",
-    "./app/data/**/*.mdx",
+    "./pages/**/*.{js,ts,tsx}",
+    "./components/**/*.{js,ts,tsx}",
+    "./layouts/**/*.{js,ts,tsx}",
+    "./data/**/*.mdx",
   ],
   darkMode: "class",
   theme: {
@@ -73,10 +73,9 @@ export default {
         14: "3.5rem",
       },
       fontFamily: {
-        sans: ["var(--font-nunito)", ...defaultTheme.fontFamily.sans],
+        sans: ["var(--font-nunito)", ...fontFamily.sans],
         greeting: ["var(--font-playpen-sans)"],
-        mono: ["var(--font-jetbrains-mono)", ...defaultTheme.fontFamily.mono],
-        playpen: ["var(--font-playpen-sans)", "cursive"],
+        mono: ["var(--font-jetbrains-mono)", ...fontFamily.mono],
       },
       colors: {
         primary: colors.indigo,
@@ -106,14 +105,14 @@ export default {
         70: "70",
         80: "80",
       },
-      typography: ({ theme }: { theme: (path: string) => string }) => ({
+      typography: ({ theme }) => ({
         DEFAULT: {
           css: {
             a: {
               color: theme("colors.primary.500"),
               "text-underline-offset": "4px",
               "&:hover": {
-                color: `${theme("colors.primary.600")}`,
+                color: theme("colors.primary.600"),
               },
               code: { color: theme("colors.primary.400") },
             },
@@ -247,7 +246,7 @@ export default {
             a: {
               color: theme("colors.primary.400"),
               "&:hover": {
-                color: `${theme("colors.primary.400")}`,
+                color: theme("colors.primary.400"),
               },
               code: { color: theme("colors.primary.400") },
             },

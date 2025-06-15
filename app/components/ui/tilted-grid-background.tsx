@@ -5,21 +5,20 @@ import TiltedGrid from "~/icons/tilted-grid.svg?react";
 export function TiltedGridBackground({ className }: { className?: string }) {
   return (
     <div
-      className={clsx([
+      className={clsx(
         "absolute overflow-hidden [mask-image:linear-gradient(white,transparent)]",
-        className,
-      ])}
+        className
+      )}
     >
-      <div
-        className={clsx([
-          "h-[160%] w-full",
+      <TiltedGrid
+        className={clsx(
+          "size-[160%]",
           "absolute inset-x-0 inset-y-[-30%] skew-y-[-18deg]",
           "dark:fill-white/[.01] dark:stroke-white/[.025]",
-          "fill-black/[0.02] stroke-black/5",
-        ])}
-      >
-        <TiltedGrid />
-      </div>
+          "fill-black/20 stroke-black/50",
+          "select-none"
+        )}
+      />
     </div>
   );
 }

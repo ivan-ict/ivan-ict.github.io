@@ -73,7 +73,7 @@ export function MobileNav() {
                     <Link
                       key={link.title}
                       href={link.href}
-                      className="py-1 text-xl font-bold tracking-widest text-gray-900 outline hover:text-primary-500 dark:text-gray-100 dark:hover:text-primary-400"
+                      className="py-1 text-xl font-bold tracking-widest text-gray-900 outline-0 hover:text-primary-500 dark:text-gray-100 dark:hover:text-primary-400"
                       onClick={onToggleNav}
                     >
                       <Twemoji emoji={link.emoji} />

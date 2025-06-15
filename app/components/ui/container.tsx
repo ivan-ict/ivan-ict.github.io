@@ -13,7 +13,7 @@ export function Container({
   return (
     <Component
       className={clsx(
-        "mx-auto w-full max-w-6xl px-4 sm:px-6 xl:px-12",
+        "mx-auto w-full max-w-6xl ps-4 pe-4 sm:ps-6 sm:pe-6 xl:ps-12 xl:pe-12",
         className
       )}
     >

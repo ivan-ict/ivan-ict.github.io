@@ -1,7 +1,8 @@
-@layer theme, base, components, utilities;
 @import "tailwindcss/theme.css" layer(theme);
 @import "tailwindcss/preflight.css" layer(base);
 @import "tailwindcss/utilities.css" layer(utilities);
+
+@layer theme, base, components, utilities;
 
 .task-list-item::before {
   @apply hidden;
@@ -12,7 +13,7 @@
 }
 
 .footnotes {
-  @apply mt-12 border-t border-gray-200 pt-8 dark:border-gray-700;
+  @apply mt-12 border-t border-gray-200/100 pt-8 dark:border-gray-700/100;
 }
 
 .data-footnote-backref {
