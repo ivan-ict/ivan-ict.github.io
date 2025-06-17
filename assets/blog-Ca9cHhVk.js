@@ -1,1 +1,0 @@
-import{w as o,o as t}from"./chunk-NL6KNZEE-Bo0qczL8.js";import{W as r}from"./welcome-YJ-YhfAR.js";import"./twemoji-Dwvftitv.js";import"./clsx-B-dksMZM.js";function p({}){return[]}const a=o(function(){return t.jsx(r,{})});export{a as default,p as meta};
