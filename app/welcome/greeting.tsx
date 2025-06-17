@@ -8,7 +8,8 @@ export function Greeting() {
         "font-greeting font-extrabold tracking-tight",
         "text-[40px] leading-[60px] md:text-[68px] md:leading-[100px]",
         "bg-clip-text text-transparent",
-        "bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-yellow-600 to-lime-600",
+        // https://github.com/tailwindlabs/tailwindcss/issues/16037
+        "bg-[radial-gradient(ellipse_at_right,#ca8a04,#65a30d)]",
         "dark:bg-gradient-to-l dark:from-emerald-500 dark:to-lime-600"
       )}
     >
