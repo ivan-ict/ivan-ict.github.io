@@ -3,6 +3,8 @@ import { Twemoji } from "~/components/ui/twemoji";
 import { Greeting } from "./greeting";
 import { Intro } from "./intro";
 import { TypedBios } from "./typed-bios";
+import { BlogLinks } from "./links";
+import { ProfileCard } from "~/components/cards/profile";
 
 export function Welcome() {
   return (
@@ -25,13 +27,16 @@ export function Welcome() {
                 experience.
               </p>
             </div>
+            <BlogLinks />
             <p className="my-6 flex md:my-8">
               <span className="me-2">Happy reading</span>
               <Twemoji emoji="clinking-beer-mugs" />
             </p>
           </div>
         </div>
-        <div className="hidden ps-4 pt-8 xl:block">{/* <ProfileCard /> */}</div>
+        <div className="hidden ps-4 pt-8 xl:block">
+          <ProfileCard />
+        </div>
       </div>
     </Container>
   );

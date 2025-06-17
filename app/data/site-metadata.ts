@@ -9,6 +9,7 @@ export const SITE_METADATA = {
   siteUrl: "https://ivan-ict.github.io/",
   siteRepo: "https://github.com/ivan-ict/ivan-ict.github.io",
   siteLogo: `${import.meta.env.VITE_BASE_PATH || ""}/static/images/logo.jpg`,
+  // siteLogo: `/static/images/logo.jpg`,
   socialBanner: `${
     import.meta.env.VITE_BASE_PATH || ""
   }/static/images/twitter-card.jpeg`,
@@ -17,7 +18,7 @@ export const SITE_METADATA = {
   x: "",
   facebook: "",
   youtube: "",
-  linkedin: "https://www.linkedin.com/in/ivantrinh/",
+  linkedin: "https://www.linkedin.com/in/ivantrinh",
   threads: "",
   instagram: "",
   locale: "en-US",
