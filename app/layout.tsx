@@ -1,4 +1,4 @@
-import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
+import { Outlet, Scripts, ScrollRestoration } from "react-router";
 import "./app.css";
 import clsx from "clsx";
 import { TiltedGridBackground } from "~/components/ui/tilted-grid-background";

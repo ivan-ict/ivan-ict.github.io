@@ -1,21 +1,8 @@
-import {
-  isRouteErrorResponse,
-  Links,
-  Meta,
-  Outlet,
-  Scripts,
-  ScrollRestoration,
-} from "react-router";
+import { isRouteErrorResponse, Links, Meta, Outlet } from "react-router";
 import type { Route } from "./+types/root";
 import "./app.css";
 import clsx from "clsx";
-import { TiltedGridBackground } from "~/components/ui/tilted-grid-background";
-import { ThemeProviders } from "./theme-providers";
 import { SITE_METADATA } from "~/data/site-metadata";
-import { Header } from "./components/header";
-import { KBarSearchProvider } from "./search/kbar-provider";
-import { UmamiAnalytics } from "./components/analytics/umami";
-import { Footer } from "./components/footer";
 
 // CSS imports
 import "~/css/tailwind.css";

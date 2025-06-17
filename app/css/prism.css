@@ -4,7 +4,7 @@
  * by copying from a prismjs compatible theme:
  * https://github.com/PrismJS/prism-themes
  */
-
+@reference "../app.css";
 /* Code title styles */
 .remark-code-title {
   @apply rounded-sm bg-gray-700/90 px-5 py-3 font-mono text-sm font-bold text-gray-200/90 dark:bg-gray-800/90;

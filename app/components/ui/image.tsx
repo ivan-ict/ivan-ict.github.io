@@ -1,5 +1,5 @@
-// "use client";
 import { clsx } from "clsx";
+import type { ImgHTMLAttributes } from "react";
 import { useLocation } from "react-router";
 import { useState } from "react";
 import ReactMediumImageZoom, {
@@ -9,9 +9,9 @@ import ReactMediumImageZoom, {
 let loadedImages: string[] = [];
 
 function useImageLoadedState(src: string) {
-  const location = useLocation();
-  const uniqueImagePath = `${location.pathname}__${src}`;
-  const [loaded, setLoaded] = useState(() =>
+  let location = useLocation();
+  let uniqueImagePath = `${location.pathname}__${src}`;
+  let [loaded, setLoaded] = useState(() =>
     loadedImages.includes(uniqueImagePath)
   );
 
@@ -25,15 +25,16 @@ function useImageLoadedState(src: string) {
   ] as const;
 }
 
-export interface ImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
+export interface ImageProps
+  extends Omit<ImgHTMLAttributes<HTMLImageElement>, "src"> {
   src: string;
   alt: string;
   loading?: "lazy" | "eager";
 }
 
 export function Image(props: ImageProps) {
-  const { alt, src, loading = "lazy", style, className, ...rest } = props;
-  const [loaded, onLoad] = useImageLoadedState(src);
+  let { alt, src, loading = "lazy", style, className, ...rest } = props;
+  let [loaded, onLoad] = useImageLoadedState(src);
 
   return (
     <div
@@ -47,7 +48,7 @@ export function Image(props: ImageProps) {
         className={clsx(
           "transition-all duration-500 [transition-timing-function:cubic-bezier(.4,0,.2,1)]",
           "h-full max-h-full w-full object-center",
-          loaded ? "blur-none" : "blur-md"
+          loaded ? "blur-0" : "blur-xl"
         )}
         src={src}
         alt={alt}
@@ -65,13 +66,13 @@ interface ZoomProps extends UncontrolledProps {
 }
 
 export function Zoom(props: ZoomProps) {
-  const { children, classDialog, ...rest } = props;
+  let { children, classDialog, ...rest } = props;
 
   return (
     <ReactMediumImageZoom
       zoomMargin={20}
       classDialog={clsx([
-        "[&_[data-rmiz-modal-img]]:rounded-sm",
+        "[&_[data-rmiz-modal-img]]:rounded-lg",
         "[&_[data-rmiz-btn-unzoom]]:hidden",
         '[&_[data-rmiz-modal-overlay="visible"]]:bg-black/80',
         classDialog,
