@@ -1,1 +1,0 @@
-import{w as o,o as t}from"./chunk-NL6KNZEE-DpFg0bLC.js";import{W as r}from"./welcome-qPJP5iA7.js";import"./now-playing-_J5d1j4C.js";import"./site-metadata-ZXaME_bH.js";function p({}){return[]}const a=o(function(){return t.jsx(r,{})});export{a as default,p as meta};
