@@ -2,14 +2,14 @@
   "name": "ivan-ict",
   "private": true,
   "type": "module",
-  "homepage": "https://ivan-ict.github.io",
+  "homepage": "https://ivan-ict.github.io/",
   "scripts": {
     "build": "react-router build",
     "dev": "react-router dev",
     "start": "react-router-serve ./build/server/index.js",
     "typecheck": "react-router typegen && tsc",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build/client"
+    "predeploy": "npm run build && cp .nojekyll build/client/ || echo '.nojekyll not found, creating one' && touch build/client/.nojekyll",
+    "deploy": "gh-pages -d build/client -t"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.4",

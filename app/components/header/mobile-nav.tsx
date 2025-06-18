@@ -9,11 +9,12 @@ import { clsx } from "clsx";
 import { Menu, X } from "lucide-react";
 import { Fragment, useState } from "react";
 import { RemoveScroll } from "react-remove-scroll";
-import { Link } from "~/components/ui/link";
+// import { Link } from "~/components/ui/link";
 import { Twemoji } from "~/components/ui/twemoji";
 import { HEADER_NAV_LINKS, MORE_NAV_LINKS } from "~/data/navigation";
 import { SITE_METADATA } from "~/data/site-metadata";
 import { Logo } from "./logo";
+import { NavLink } from "react-router";
 
 export function MobileNav() {
   const [navShow, setNavShow] = useState(false);
@@ -70,15 +71,24 @@ export function MobileNav() {
                 </div>
                 <nav className="mt-4 flex h-full basis-0 flex-col items-start gap-4 overflow-y-auto pl-10 pt-2">
                   {[...HEADER_NAV_LINKS, ...MORE_NAV_LINKS].map((link) => (
-                    <Link
+                    // <Link
+                    //   key={link.title}
+                    //   href={link.href}
+                    //   className="py-1 text-xl font-bold tracking-widest text-gray-900 outline-0 hover:text-primary-500 dark:text-gray-100 dark:hover:text-primary-400"
+                    //   onClick={onToggleNav}
+                    // >
+                    //   <Twemoji emoji={link.emoji} />
+                    //   <span className="ml-2">{link.title}</span>
+                    // </Link>
+                    <NavLink
                       key={link.title}
-                      href={link.href}
+                      to={link.href}
                       className="py-1 text-xl font-bold tracking-widest text-gray-900 outline-0 hover:text-primary-500 dark:text-gray-100 dark:hover:text-primary-400"
                       onClick={onToggleNav}
                     >
                       <Twemoji emoji={link.emoji} />
                       <span className="ml-2">{link.title}</span>
-                    </Link>
+                    </NavLink>
                   ))}
                 </nav>
                 <button
