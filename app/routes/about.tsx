@@ -1,12 +1,9 @@
 import type { Route } from "./+types/home";
-import { Welcome } from "../welcome/welcome";
 import { SITE_METADATA } from "~/data/site-metadata";
+import { AboutPage } from "~/about/page";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
-
     { charSet: "utf-8" },
     { name: "viewport", content: "width=device-width, initial-scale=1" },
     { title: SITE_METADATA.title },
@@ -19,11 +16,11 @@ export function meta({}: Route.MetaArgs) {
     { property: "og:image", content: SITE_METADATA.socialBanner },
     { property: "og:locale", content: "en_US" },
     { property: "og:type", content: "website" },
-    // // Twitter
+    // Twitter
     { name: "twitter:title", content: SITE_METADATA.title },
     { name: "twitter:card", content: "summary_large_image" },
     { name: "twitter:image", content: SITE_METADATA.socialBanner },
-    // // Theme colors
+    // Theme colors
     {
       name: "theme-color",
       media: "(prefers-color-scheme: light)",
@@ -45,6 +42,6 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-export default function Home() {
-  return <Welcome />;
+export default function About() {
+  return <AboutPage />;
 }
