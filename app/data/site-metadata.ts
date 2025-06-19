@@ -18,7 +18,7 @@ export const SITE_METADATA = {
   x: "",
   facebook: "",
   youtube: "",
-  linkedin: "https://www.linkedin.com/in/ivantrinh",
+  linkedin: "https://www.linkedin.com/in/ivan-ict",
   threads: "",
   instagram: "",
   locale: "en-US",

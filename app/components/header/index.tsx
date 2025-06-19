@@ -17,9 +17,9 @@ let logged = false;
 
 function logASCIItext() {
   if (logged) return;
-  console.info("Ivan");
+  console.info("Hi! I'm Ivan");
   console.log("🧑‍💻 View source:", SITE_METADATA.siteRepo);
-  console.log(`🙌 Let's connect:`, SITE_METADATA.x);
+  console.log(`🙌 Let's connect:`, SITE_METADATA.linkedin);
   logged = true;
 }
 

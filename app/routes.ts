@@ -9,6 +9,8 @@ export default [
   layout("layout.tsx", [
     index("routes/home.tsx"),
     route("blog", "routes/blog.tsx"),
+    route("about", "routes/about.tsx"),
+    route("projects", "routes/projects.tsx"),
     route("*", "routes/404.tsx"),
     // route("blog", "routes/snippets.tsx"),
   ]),
